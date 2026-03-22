@@ -15,5 +15,13 @@ Development Model: Agile
 2. docker compose down (keep data)
 3. docker compose down -v (wipe data)
 
+# Instructions to run the app
 
+cd phase4_frontend/cognitive-assist-app
+npm install
+ng serve 
+
+URL: http://localhost:4200
+Login: Any email with '@' + password 
+Example: test@example.com / password123
 
