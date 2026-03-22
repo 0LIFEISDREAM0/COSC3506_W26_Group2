@@ -1,0 +1,62 @@
+<div class="register-container">
+    <div class="register-card">
+        <h1>Create Account</h1>
+        <p class="subtitle">Join CogniAssist for Focused Reading Support</p>
+
+        <form *ngIf="!success" (ngSubmit)="onRegister()">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input id="firstName" type="text" class="form-control" [(ngModel)]="firstName" name="firstName"
+                    placeholder="Enter your first name" [disabled]="loading" />
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" type="text" class="form-control" [(ngModel)]="lastName" name="lastName"
+                    placeholder="Enter your last name" [disabled]="loading" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input id="email" type="email" class="form-control" [(ngModel)]="email" name="email"
+                    placeholder="Enter your email" [disabled]="loading" />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" class="form-control" [(ngModel)]="password" name="password"
+                    placeholder="At least 5 characters" [disabled]="loading" />
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input id="confirmPassword" type="password" class="form-control" [(ngModel)]="confirmPassword"
+                    name="confirmPassword" placeholder="Re-enter your password" [disabled]="loading" />
+            </div>
+
+            <div *ngIf="error" class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100" [disabled]="loading">
+                <span *ngIf="!loading">Create Account</span>
+                <span *ngIf="loading">
+                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                    Creating...
+                </span>
+            </button>
+        </form>
+
+        <div *ngIf="success" class="alert alert-success" role="alert">
+            <strong>Success!</strong> Your account has been created. Redirecting to login...
+        </div>
+
+        <div class="text-center mt-3">
+            <p>Already have an account?
+                <a href="#" (click)="goToLogin(); $event.preventDefault()" class="link">
+                    Sign In
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

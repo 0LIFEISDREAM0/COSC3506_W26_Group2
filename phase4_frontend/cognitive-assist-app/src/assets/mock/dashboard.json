@@ -1,0 +1,35 @@
+{
+    "success": true,
+    "userId": 1,
+    "userName": "John Doe",
+    "files": [
+        {
+            "id": 1,
+            "fileName": "Sample Document.pdf",
+            "uploadDate": "2026-03-15",
+            "filePath": "/uploads/sample-document.pdf"
+        },
+        {
+            "id": 2,
+            "fileName": "Research Paper.pdf",
+            "uploadDate": "2026-03-10",
+            "filePath": "/uploads/research-paper.pdf"
+        }
+    ],
+    "reminders": [
+        {
+            "id": 1,
+            "title": "Review document",
+            "dueDate": "2026-03-25",
+            "dueTime": "10:30:00",
+            "createdAt": "2026-03-15"
+        },
+        {
+            "id": 2,
+            "title": "Submit assignment",
+            "dueDate": "2026-03-28",
+            "dueTime": "23:59:00",
+            "createdAt": "2026-03-15"
+        }
+    ]
+}

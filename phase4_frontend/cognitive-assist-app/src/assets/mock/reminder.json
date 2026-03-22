@@ -1,0 +1,11 @@
+{
+    "success": true,
+    "message": "Reminder created successfully",
+    "reminder": {
+        "id": 3,
+        "title": "New Reminder",
+        "dueDate": "2026-03-30",
+        "dueTime": "14:00:00",
+        "createdAt": "2026-03-21"
+    }
+}

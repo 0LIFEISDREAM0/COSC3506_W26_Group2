@@ -1,0 +1,30 @@
+{
+    "success": true,
+    "pdfId": 1,
+    "fileName": "Phase1_TaskDescription.pdf",
+    "lines": [
+        "Phase 1: Topic Selection",
+        "Task: Topic Selection",
+        "Points: 0.5",
+        "Students are required to select a suitable topic or idea to develop into a working system.",
+        "The topic selected must adhere to the following constraints:",
+        "Should provide a viable solution to an existing real-world problem or requirement.",
+        "If existing solutions are adapted, it must improve on existing works.",
+        "Any cloned or copied repositories without significant feature revisions or modifications will be considered plagiarism.",
+        "Must be a full-stack project, i.e. both backend and frontend.",
+        "Purely frontend or backend projects will not be accepted.",
+        "Originality/uniqueness and practicality of the project will be taken into consideration during evaluation.",
+        "Choose one of the following project topics:",
+        "Web3 based P2P chat application",
+        "Web3 based P2P social media application",
+        "Augmented reality (AR) based application for accessibility needs",
+        "Augmented reality based application for social benefit",
+        "Application for assisting cognitive disabilities."
+    ],
+    "totalLines": 17,
+    "metadata": {
+        "title": "Phase 1 - Topic Selection Requirements",
+        "author": "Course Instruction",
+        "date": "2026-03-22"
+    }
+}

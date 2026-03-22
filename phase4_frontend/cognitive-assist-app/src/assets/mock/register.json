@@ -1,0 +1,7 @@
+{
+    "success": true,
+    "message": "Account created successfully",
+    "userId": 2,
+    "email": "newuser@example.com",
+    "userName": "New User"
+}

@@ -1,0 +1,8 @@
+{
+    "success": true,
+    "message": "Login successful",
+    "userId": 1,
+    "email": "user@example.com",
+    "userName": "Test User",
+    "clientId": "client-001"
+}

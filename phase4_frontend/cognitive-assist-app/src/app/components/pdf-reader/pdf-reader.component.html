@@ -1,0 +1,80 @@
+<div class="pdf-reader-container">
+    <!-- Header -->
+    <nav class="reader-header">
+        <button class="btn btn-sm btn-light" (click)="goBack()">
+            ← Back to Dashboard
+        </button>
+        <h3 class="reader-title">{{ pdfContent?.fileName || 'PDF Reader' }}</h3>
+        <button class="btn btn-sm btn-light" (click)="toggleFocusedMode()"
+            [title]="focusedMode ? 'Disable focused mode' : 'Enable focused mode'">
+            {{ focusedMode ? 'Focused Mode ON' : 'Focused Mode OFF' }}
+        </button>
+    </nav>
+
+    <!-- Loading State -->
+    <div *ngIf="loading" class="text-center py-5">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <p>Loading PDF content...</p>
+    </div>
+
+    <!-- PDF Content -->
+    <div *ngIf="!loading && pdfContent" class="reader-content">
+        <div *ngIf="focusedMode" class="focused-mode">
+            <div class="focused-background">
+                <div class="all-content">
+                    <div *ngFor="let line of pdfContent.lines; let i = index" class="content-line"
+                        [class.highlighted]="i === currentLineIndex">
+                        {{ line }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="focused-overlay">
+                <div class="focus-window">
+                    <div *ngIf="currentLineIndex > 0" class="context-line">
+                        {{ getPreviousLine() }}
+                    </div>
+
+                    <div class="main-line">
+                        {{ getCurrentLine() }}
+                    </div>
+
+                    <div *ngIf="currentLineIndex < pdfContent.lines.length - 1" class="context-line">
+                        {{ getNextLine() }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="focused-controls">
+            <button class="btn btn-nav btn-prev" (click)="previousLine()" [disabled]="isFirstLine()"
+                title="Previous line (← arrow or P)">
+                ← Previous
+            </button>
+
+            <div class="progress-info">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" [style.width.%]="getProgress()"></div>
+                </div>
+                <small>Line {{ currentLineIndex + 1 }} of {{ pdfContent.lines.length }}</small>
+            </div>
+
+            <button class="btn btn-nav btn-next" (click)="nextLine()" [disabled]="isLastLine()"
+                title="Next line (→ arrow or N)">
+                Next →
+            </button>
+        </div>
+    </div>
+
+    <!-- Normal Mode - Focus mode off -->
+    <div *ngIf="!focusedMode" class="normal-mode">
+        <div class="document-view">
+            <div *ngFor="let line of pdfContent.lines" class="text-line">
+                {{ line }}
+            </div>
+        </div>
+    </div>
+</div>
