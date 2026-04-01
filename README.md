@@ -25,3 +25,35 @@ URL: http://localhost:4200
 Login: Any email with '@' + password 
 Example: test@example.com / password123
 
+# backend setup 
+1. Go to backend folder | cd phase4_backend
+2. Install dependencies | pip install -r requirement.txt
+3. Run the server | python app.py
+
+Backend runs at: 
+
+# API
+
+Register:
+POST /register
+
+EX:
+{
+  "fullname": "Alex He"
+  "email": "alex@test.com"
+  "password": "123456"
+}
+
+Login:
+POST /login
+
+EX{
+  "email": "alex@test.com"
+  "password": "123456"
+}
+
+# Database
+
+This database uses SQLite
+Database created automatically when you run the app
+no manual setup needed
